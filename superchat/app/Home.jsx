@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text, TextInput, FlatList, Image } from "react-native";
+import { View, Text, TextInput, FlatList, Image, TouchableOpacity } from "react-native";
+import { useRouter } from "expo-router";
 
 const users = [
   { id: "1", name: "Kookie", age: 21, img: "https://i.imgur.com/0y8Ftya.jpg" },
@@ -9,6 +10,7 @@ const users = [
 ];
 
 export default function Home() {
+  const router = useRouter();
   return (
     <View style={{ flex: 1, backgroundColor: "#7b6b6b", padding: 15 }}>
       <TextInput
@@ -38,10 +40,21 @@ export default function Home() {
       />
 
       <View style={{ flexDirection: "row", justifyContent: "space-around", padding: 10, backgroundColor: "#5a4c4c", borderRadius: 30 }}>
-        <Text>🏠</Text>
-        <Text>❤️</Text>
-        <Text>💬</Text>
-        <Text>👤</Text>
+        <TouchableOpacity onPress={() => router.push('/home')} style={{ padding: 8 }}>
+          <Text style={{ fontSize: 18 }}>🏠</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => router.push('/create-character')} style={{ padding: 8 }}>
+          <Text style={{ fontSize: 18 }}>❤️</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => router.push('/home')} style={{ padding: 8 }}>
+          <Text style={{ fontSize: 18 }}>💬</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => router.push('/home')} style={{ padding: 8 }}>
+          <Text style={{ fontSize: 18 }}>👤</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
