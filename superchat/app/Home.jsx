@@ -32,30 +32,30 @@ export default function Home() {
         keyExtractor={(item) => item.id}
         columnWrapperStyle={{ justifyContent: "space-between" }}
         renderItem={({ item }) => (
-          <View style={{ backgroundColor: "#4f4242", width: "48%", borderRadius: 20, padding: 10, marginBottom: 10 }}>
+          <TouchableOpacity onPress={() => router.push(`/chat/${item.id}`)} style={{ backgroundColor: "#4f4242", width: "48%", borderRadius: 20, padding: 10, marginBottom: 10 }}>
             <Image source={{ uri: item.img }} style={{ width: "100%", height: 160, borderRadius: 15 }} />
             <Text style={{ color: "white", marginTop: 5 }}>{item.name}, {item.age}</Text>
-          </View>
+          </TouchableOpacity>
         )}
       />
 
       <View style={{ flexDirection: "row", justifyContent: "space-around", padding: 10, backgroundColor: "#5a4c4c", borderRadius: 30 }}>
-        <TouchableOpacity onPress={() => router.push('/home')} style={{ padding: 8 }}>
-          <Text style={{ fontSize: 18 }}>🏠</Text>
+        <TouchableOpacity onPress={() => router.replace('/home')} style={{ padding: 8 }}>
+          <Text style={{ color: 'white', fontSize: 18 }}>🏠</Text>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => router.push('/create-character')} style={{ padding: 8 }}>
-          <Text style={{ fontSize: 18 }}>❤️</Text>
+          <Text style={{ color: 'white', fontSize: 18 }}>❤️</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => router.push('/home')} style={{ padding: 8 }}>
-          <Text style={{ fontSize: 18 }}>💬</Text>
+        <TouchableOpacity onPress={() => router.push(`/chat/${users[0].id}`)} style={{ padding: 8 }}>
+          <Text style={{ color: 'white', fontSize: 18 }}>💬</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => router.push('/home')} style={{ padding: 8 }}>
-          <Text style={{ fontSize: 18 }}>👤</Text>
+        <TouchableOpacity onPress={() => router.push('/admin-login')} style={{ padding: 8 }}>
+          <Text style={{ color: 'white', fontSize: 18 }}>👤</Text>
         </TouchableOpacity>
       </View>
     </View>
   );
-} 
+}
