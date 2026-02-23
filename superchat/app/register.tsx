@@ -58,14 +58,14 @@ export default function Register() {
       />
 
       <TouchableOpacity
-        onPress={() => router.replace("/login")}
+        onPress={() => router.replace("")}
         style={{
           backgroundColor: "#5a4c4c",
           padding: 12,
           borderRadius: 20,
           alignItems: "center",
           marginTop: 10,
-        }}
+        }}  
       >
         <Text style={{ color: "white" }}>ลงทะเบียน</Text>
       </TouchableOpacity>

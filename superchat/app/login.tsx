@@ -12,7 +12,7 @@ export default function Login() {
   function handleLogin() {
     // Fake login logic: username 'user' and password 'pass'
     if (username === 'user' && password === 'pass') {
-      router.push('/home')
+      router.push('')
     } else {
       setError('Invalid credentials — try user / pass')
     }
@@ -26,10 +26,10 @@ export default function Login() {
       {error ? <Text style={styles.error}>{error}</Text> : null}
       <Button title="Login (user / pass)" onPress={handleLogin} />
       <View style={styles.row}>
-        <TouchableOpacity onPress={() => router.push('/register')} style={styles.link}>
+        <TouchableOpacity onPress={() => router.push('/app/register')} style={styles.link}>
           <Text style={styles.linkText}>Register</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => router.push('/admin-login')} style={styles.link}>
+        <TouchableOpacity onPress={() => router.push('/app/admin-login')} style={styles.link}>
           <Text style={styles.linkText}>Admin Login</Text>
         </TouchableOpacity>
       </View>

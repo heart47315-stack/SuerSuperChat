@@ -2,12 +2,12 @@ import React from "react";
 import { View, Text, TextInput, FlatList, Image, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
 
-const users = [
-  { id: "1", name: "Kookie", age: 21, img: "https://i.imgur.com/0y8Ftya.jpg" },
-  { id: "2", name: "V", age: 23, img: "https://i.imgur.com/uZ2pZ9A.jpg" },
-  { id: "3", name: "Jimin", age: 22, img: "https://i.imgur.com/l49aYS3.jpg" },
-  { id: "4", name: "JK", age: 24, img: "https://i.imgur.com/GVJ8q6r.jpg" },
-];
+// const users = [
+//   { id: "1", name: "Kookie", age: 21, img: "https://i.imgur.com/0y8Ftya.jpg" },
+//   { id: "2", name: "V", age: 23, img: "https://i.imgur.com/uZ2pZ9A.jpg" },
+//   { id: "3", name: "Jimin", age: 22, img: "https://i.imgur.com/l49aYS3.jpg" },
+//   { id: "4", name: "JK", age: 24, img: "https://i.imgur.com/GVJ8q6r.jpg" },
+// ];
 
 export default function Home() {
   const router = useRouter();
@@ -32,7 +32,7 @@ export default function Home() {
         keyExtractor={(item) => item.id}
         columnWrapperStyle={{ justifyContent: "space-between" }}
         renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => router.push(`/chat/${item.id}`)} style={{ backgroundColor: "#4f4242", width: "48%", borderRadius: 20, padding: 10, marginBottom: 10 }}>
+          <TouchableOpacity onPress={() => router.push(``)} style={{ backgroundColor: "#4f4242", width: "48%", borderRadius: 20, padding: 10, marginBottom: 10 }}>
             <Image source={{ uri: item.img }} style={{ width: "100%", height: 160, borderRadius: 15 }} />
             <Text style={{ color: "white", marginTop: 5 }}>{item.name}, {item.age}</Text>
           </TouchableOpacity>
@@ -40,19 +40,19 @@ export default function Home() {
       />
 
       <View style={{ flexDirection: "row", justifyContent: "space-around", padding: 10, backgroundColor: "#5a4c4c", borderRadius: 30 }}>
-        <TouchableOpacity onPress={() => router.replace('/home')} style={{ padding: 8 }}>
+        <TouchableOpacity onPress={() => router.replace('')} style={{ padding: 8 }}>
           <Text style={{ color: 'white', fontSize: 18 }}>🏠</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => router.push('/create-character')} style={{ padding: 8 }}>
+        <TouchableOpacity onPress={() => router.push('')} style={{ padding: 8 }}>
           <Text style={{ color: 'white', fontSize: 18 }}>❤️</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => router.push(`/chat/${users[0].id}`)} style={{ padding: 8 }}>
+        <TouchableOpacity onPress={() => router.push(``)} style={{ padding: 8 }}>
           <Text style={{ color: 'white', fontSize: 18 }}>💬</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => router.push('/admin-login')} style={{ padding: 8 }}>
+        <TouchableOpacity onPress={() => router.push('')} style={{ padding: 8 }}>
           <Text style={{ color: 'white', fontSize: 18 }}>👤</Text>
         </TouchableOpacity>
       </View>

@@ -12,7 +12,7 @@ export default function CreateCharacter() {
     if (!name) return Alert.alert('Please enter a name')
     // Fake creation: generate a random id and navigate to chat
     const id = Math.random().toString(36).slice(2, 9)
-    router.push(`/chat/${id}`)
+    router.push('')
   }
 
   return (
