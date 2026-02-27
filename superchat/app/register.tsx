@@ -5,10 +5,11 @@ import { useRouter } from "expo-router";
 export default function Register() {
   const router = useRouter();
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirm, setConfirm] = useState("");
+  // สร้าง state สำหรับเก็บค่าที่ผู้ใช้กรอก
+  const [name, setName] = useState("");       // ชื่อ
+  const [email, setEmail] = useState("");     // อีเมล
+  const [password, setPassword] = useState(""); // รหัสผ่าน
+  const [confirm, setConfirm] = useState("");   // ยืนยันรหัสผ่าน
 
   return (
     <View
@@ -19,11 +20,12 @@ export default function Register() {
         padding: 20,
       }}
     >
+      {/* หัวข้อหน้าลงทะเบียน */}
       <Text style={{ fontSize: 24, color: "white", textAlign: "center", marginBottom: 20 }}>
         ลงทะเบียน
       </Text>
 
-      {/* Name */}
+      {/* ช่องกรอกชื่อ */}
       <TextInput
         placeholder="ชื่อ"
         value={name}
@@ -31,7 +33,7 @@ export default function Register() {
         style={input}
       />
 
-      {/* Email */}
+      {/* ช่องกรอกอีเมล */}
       <TextInput
         placeholder="อีเมล"
         value={email}
@@ -39,16 +41,16 @@ export default function Register() {
         style={input}
       />
 
-      {/* Password */}
+      {/* ช่องกรอกรหัสผ่าน */}
       <TextInput
         placeholder="รหัสผ่าน"
-        secureTextEntry
+        secureTextEntry   // ทำให้ข้อความแสดงเป็นจุด (เหมือนรหัสผ่าน)
         value={password}
         onChangeText={setPassword}
         style={input}
       />
 
-      {/* Confirm */}
+      {/* ช่องกรอกยืนยันรหัสผ่าน */}
       <TextInput
         placeholder="ยืนยันรหัสผ่าน"
         secureTextEntry
@@ -57,8 +59,9 @@ export default function Register() {
         style={input}
       />
 
+      {/* ปุ่มลงทะเบียน */}
       <TouchableOpacity
-        onPress={() => router.replace("")}
+        onPress={() => router.replace("home")} // เมื่อกดจะไปหน้า Home (แก้ path ตามที่ต้องการ)
         style={{
           backgroundColor: "#5a4c4c",
           padding: 12,
@@ -70,6 +73,7 @@ export default function Register() {
         <Text style={{ color: "white" }}>ลงทะเบียน</Text>
       </TouchableOpacity>
 
+      {/* ปุ่มกลับไปหน้า Login */}
       <TouchableOpacity onPress={() => router.back()}>
         <Text style={{ color: "white", textAlign: "center", marginTop: 15 }}>
           กลับไปหน้า Login
@@ -79,6 +83,7 @@ export default function Register() {
   );
 }
 
+// สไตล์สำหรับช่องกรอกข้อมูล
 const input = {
   backgroundColor: "white",
   borderRadius: 20,
